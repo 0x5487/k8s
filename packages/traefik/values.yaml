@@ -1,0 +1,29 @@
+image: traefik
+imageTag: 1.7-alpine
+serviceType: NodePort
+replicas: 1
+deploymentStrategy: 
+  rollingUpdate:
+    maxSurge: 0
+    maxUnavailable: 1
+  type: RollingUpdate
+dashboard:
+  enabled: true
+deployment:
+  hostPort:
+    httpEnabled: true
+    httpsEnabled: false
+    dashboardEnabled: false
+    # httpPort: 80
+    # httpsPort: 443
+    # dashboardPort: 8080
+rbac:
+  enabled: true
+metrics:
+  prometheus:
+    enabled: true
+accessLogs:
+  enabled: true
+  format: json  # choices are: common, json
+nodeSelector:
+   app: "bifrost"
