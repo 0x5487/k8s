@@ -15,6 +15,14 @@ defaultEntryPoints = ["http"]
 
 [kubernetes]
 
+[http.middlewares]
+  [http.middlewares.testHeader.headers]
+    AccessControlAllowMethods= ["GET", "OPTIONS", "POST", "PUT", "DELETE"]
+    AccessControlAllowHeaders= ["*", "Authorization", "Content-Type", "Origin", "Content-Length"]
+    AccessControlAllowOrigin = "*"
+    AccessControlMaxAge = 100
+    AddVaryHeader = true
+
 
 # Metrics definition
 [metrics]

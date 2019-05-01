@@ -1,7 +1,7 @@
 image: traefik
-imageTag: 1.7-alpine
+imageTag: 1.7.11-alpine
 serviceType: NodePort
-replicas: 1
+replicas: 2
 deploymentStrategy: 
   rollingUpdate:
     maxSurge: 0
@@ -26,4 +26,4 @@ accessLogs:
   enabled: true
   format: json  # choices are: common, json
 nodeSelector:
-   app: "bifrost"
+   app: "traefik"
