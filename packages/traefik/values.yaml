@@ -2,6 +2,8 @@ image: traefik
 imageTag: 1.7.11-alpine
 serviceType: NodePort
 replicas: 2
+startupArguments:
+  - "--ping.entrypoint=http"
 deploymentStrategy: 
   rollingUpdate:
     maxSurge: 0
