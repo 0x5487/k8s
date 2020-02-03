@@ -1,15 +1,15 @@
-### 安裝版本 k8s 1.13
+### 安裝版本 k8s 1.15
 
    ```bash
    yum makecache fast
-   yum install -y kubeadm-1.14.5 kubelet-1.14.5 kubectl-1.14.5 --disableexclude=kube*
+   yum install -y kubeadm-1.15.7 kubelet-1.15.7 kubectl-1.15.7 --disableexclude=kube*
    ```
-   yum install -y kubectl-1.14.5 --disableexclude=kube*
+   yum install -y kubectl-1.15.7 --disableexclude=kube*
 
 
 
 kubeadm init \
-  --kubernetes-version=v1.14.5 \
+  --kubernetes-version=v1.15.7 \
   --pod-network-cidr=10.244.0.0/16 \
   --apiserver-advertise-address=10.1.1.184
 
